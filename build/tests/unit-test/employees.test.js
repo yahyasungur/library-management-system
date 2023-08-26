@@ -64,57 +64,6 @@ describe(`Users Tests Suites`, () => {
             expect(e.toString()).toBe('Error: Please enter last name.');
         }
     }));
-    test(`Update Users - All fields have value.`, () => __awaiter(void 0, void 0, void 0, function* () {
-        // select last added
-        const info = {};
-        const emp = yield app_1.default.selectUsers(info);
-        const employee = emp[emp.length - 1];
-        const employeeId = employee.id;
-        const data = {
-            id: employeeId,
-            firstName: randomstring_1.default.generate({
-                length: 12,
-                charset: 'alphabetic'
-            }),
-            lastName: randomstring_1.default.generate({
-                length: 12,
-                charset: 'alphabetic'
-            }),
-            email: `${randomstring_1.default.generate({
-                length: 5,
-                charset: 'alphabetic'
-            })}@gmail.com`,
-            age: 9
-        };
-        const res = yield app_1.default.updateUsers(data);
-        expect(res).toBe(`User updated successfully.`);
-    }));
-    test(`Update Users - Required fields are missing.`, () => __awaiter(void 0, void 0, void 0, function* () {
-        try {
-            // select last added
-            const info = {};
-            const emp = yield app_1.default.selectUsers(info);
-            const employee = emp[emp.length - 1];
-            const employeeId = employee.id;
-            const data = {
-                id: employeeId,
-                firstName: null,
-                lastName: randomstring_1.default.generate({
-                    length: 12,
-                    charset: 'alphabetic'
-                }),
-                email: `${randomstring_1.default.generate({
-                    length: 5,
-                    charset: 'alphabetic'
-                })}@gmail.com`,
-                age: 9
-            };
-            yield app_1.default.updateUsers(data);
-        }
-        catch (e) {
-            expect(e.toString()).toBe('Error: Please enter first name.');
-        }
-    }));
     test(`Delete Users.`, () => __awaiter(void 0, void 0, void 0, function* () {
         // select last added
         const info = {};

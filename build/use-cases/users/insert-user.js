@@ -14,10 +14,7 @@ const addUser = (makeUsers, userDb) => {
         return __awaiter(this, void 0, void 0, function* () {
             let data = yield makeUsers(info); // entity
             data = {
-                firstName: data.getFn(),
-                lastName: data.getLn(),
-                email: data.getEmail(),
-                age: data.getAge()
+                name: data.getFn()
             };
             // to do checking if name already exist
             const check = yield userDb.checkNameExist(data);

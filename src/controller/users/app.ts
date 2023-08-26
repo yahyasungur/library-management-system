@@ -7,13 +7,11 @@ import userDelete from './delete-user';
 // #####
 const userAdds = userAdd(userUC.addUsers);
 const userSelects = userSelect(userUC.selectUsers);
-const usersUpdates = usersUpdate(userUC.updateUsers);
 const userDeletes = userDelete(userUC.deleteUsers);
 // #####
 const userController = {
     userAdds,
     userSelects,
-    usersUpdates,
     userDeletes
 };
 

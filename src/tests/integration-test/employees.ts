@@ -16,7 +16,7 @@ const routes = () => {
         try {
             const res = await axios({
                 method: 'GET',
-                url: `${url}/api/users`,
+                url: `${url}/users`,
                 auth: {
                     username: process.env.name!,
                     password: process.env.pass!
@@ -32,7 +32,7 @@ const routes = () => {
         try {
             const res = await axios({
                 method: 'POST',
-                url: `${url}/api/users`,
+                url: `${url}/users`,
                 auth: {
                     username: process.env.name!,
                     password: process.env.pass!
@@ -51,7 +51,7 @@ const routes = () => {
         try {
             const res = await axios({
                 method: 'PATCH',
-                url: `${url}/api/users/${id}`,
+                url: `${url}/users/${id}`,
                 auth: {
                     username: process.env.name!,
                     password: process.env.pass!
@@ -70,7 +70,7 @@ const routes = () => {
         try {
             const res = await axios({
                 method: 'DELETE',
-                url: `${url}/api/users/${id}`,
+                url: `${url}/users/${id}`,
                 auth: {
                     username: process.env.name!,
                     password: process.env.pass!

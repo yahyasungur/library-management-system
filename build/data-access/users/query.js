@@ -15,8 +15,6 @@ const query = (conn, models) => {
         checkNameExist,
         selectAll,
         selectOne,
-        checkNameExistUpdate,
-        patchUser,
         removeUser
     });
     function removeUser(id) {
@@ -28,50 +26,6 @@ const query = (conn, models) => {
                     where: {
                         id
                     }
-                });
-                return res;
-            }
-            catch (e) {
-                console.log('Error: ', e);
-            }
-        });
-    }
-    function patchUser(data) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                // use sequelize on update
-                const User = models.User;
-                const res = yield User.update({
-                    firstName: data.firstName,
-                    lastName: data.lastName,
-                    email: data.email,
-                    age: data.age
-                }, {
-                    where: {
-                        id: data.id
-                    }
-                });
-                return res;
-            }
-            catch (e) {
-                console.log('Error: ', e);
-            }
-        });
-    }
-    function checkNameExistUpdate(data) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                const pool = yield conn();
-                const { firstName, lastName, id } = data; // deconstruct
-                const res = yield new Promise((resolve) => {
-                    const sql = `SELECT id FROM "Users" WHERE "firstName" = $1 AND id <> $3 AND "lastName" = $2 AND id <> $3;`;
-                    const params = [firstName, lastName, id];
-                    pool.query(sql, params, (err, res) => {
-                        pool.end(); // end connection
-                        if (err)
-                            resolve(err);
-                        resolve(res);
-                    });
                 });
                 return res;
             }
@@ -125,10 +79,10 @@ const query = (conn, models) => {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const pool = yield conn();
-                const { firstName, lastName } = data; // deconstruct
+                const { name } = data; // deconstruct
                 const res = yield new Promise((resolve) => {
-                    const sql = `SELECT id FROM "Users" WHERE "firstName" = $1 AND "lastName" = $2;`;
-                    const params = [firstName, lastName];
+                    const sql = `SELECT id FROM "Users" WHERE "firstName" = $1;`;
+                    const params = [name];
                     pool.query(sql, params, (err, res) => {
                         pool.end(); // end connection
                         if (err)

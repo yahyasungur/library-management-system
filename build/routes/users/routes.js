@@ -15,8 +15,6 @@ const route = (router, makeExpressCallback, validateAuth) => {
     router.post('/', validateAuth, makeExpressCallback(app_1.default.userAdds));
     // #####
     // PATCH
-    // update employee
-    router.patch('/:id', validateAuth, makeExpressCallback(app_1.default.usersUpdates));
     // #####
     // DELETE
     router.delete('/:id', validateAuth, makeExpressCallback(app_1.default.userDeletes));

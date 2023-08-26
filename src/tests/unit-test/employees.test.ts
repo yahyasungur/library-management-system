@@ -55,62 +55,6 @@ describe(`Users Tests Suites`, () => {
         }
     });
 
-    test(`Update Users - All fields have value.`, async () => {
-        // select last added
-        const info = {};
-        const emp = await userUC.selectUsers(info);
-        const employee = emp[emp.length - 1];
-        const employeeId = employee.id;
-
-        const data = {
-            id: employeeId,
-            firstName: randomstring.generate({
-                length: 12,
-                charset: 'alphabetic'
-            }), // generate random string
-            lastName: randomstring.generate({
-                length: 12,
-                charset: 'alphabetic'
-            }), // generate random string
-            email: `${randomstring.generate({
-                length: 5,
-                charset: 'alphabetic'
-            })}@gmail.com`, // generate random string
-            age: 9
-        };
-
-        const res = await userUC.updateUsers(data);
-        expect(res).toBe(`User updated successfully.`);
-    });
-
-    test(`Update Users - Required fields are missing.`, async () => {
-        try {
-            // select last added
-            const info = {};
-            const emp = await userUC.selectUsers(info);
-            const employee = emp[emp.length - 1];
-            const employeeId = employee.id;
-
-            const data = {
-                id: employeeId,
-                firstName: null,
-                lastName: randomstring.generate({
-                    length: 12,
-                    charset: 'alphabetic'
-                }), // generate random string
-                email: `${randomstring.generate({
-                    length: 5,
-                    charset: 'alphabetic'
-                })}@gmail.com`, // generate random string
-                age: 9
-            };
-
-            await userUC.updateUsers(data);
-        } catch (e: any) {
-            expect(e.toString()).toBe('Error: Please enter first name.');
-        }
-    });
-
     test(`Delete Users.`, async () => {
         // select last added
         const info = {};

@@ -25,10 +25,7 @@ const selectUser = (userDb, decrypt) => {
                         // push items to array
                         data.push({
                             id: e.id,
-                            firstName: e.firstName ? decrypt(e.firstName) : null,
-                            lastName: e.lastName ? decrypt(e.lastName) : null,
-                            email: e.lastName ? decrypt(e.email) : null,
-                            age: e.age ? e.age : 0,
+                            name: e.name ? decrypt(e.name) : null,
                             createdAt: e.createdAt,
                             updatedAt: e.updatedAt
                         });
@@ -46,10 +43,7 @@ const selectUser = (userDb, decrypt) => {
                         // push items to array
                         data.push({
                             id: e.id,
-                            firstName: e.firstName ? decrypt(e.firstName) : null,
-                            lastName: e.lastName ? decrypt(e.lastName) : null,
-                            email: e.lastName ? decrypt(e.email) : null,
-                            age: e.age ? e.age : 0,
+                            name: e.name ? decrypt(e.name) : null,
                             createdAt: e.createdAt,
                             updatedAt: e.updatedAt
                         });

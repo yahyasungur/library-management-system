@@ -3,10 +3,7 @@ const addUser = (makeUsers: Function, userDb: any) => {
         let data = await makeUsers(info); // entity
 
         data = {
-            firstName: data.getFn(),
-            lastName: data.getLn(),
-            email: data.getEmail(),
-            age: data.getAge()
+            name: data.getFn()
         };
 
         // to do checking if name already exist
