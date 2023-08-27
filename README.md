@@ -1,7 +1,6 @@
 # library-management-system
 
-## Note: Please make the .env file before using. 
-## Follow the .env.txt file for configuring .env file
+## Note: Please make the .env file before using. --> Follow the .env.txt file for configuring .env file
 
 To use with yarn:
 
