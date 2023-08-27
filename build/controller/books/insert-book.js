@@ -1,4 +1,12 @@
 "use strict";
+/**
+ * Book Add Controller
+ * @param {Function} addBooks - Add Book Use Case
+ * @returns {Object} Book Add Controller
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -20,8 +28,8 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const usersUpdate = (updateUsers) => {
-    return function puts(httpRequest) {
+const bookAdd = (addBooks) => {
+    return function post(httpRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const _a = httpRequest.body, { source = {} } = _a, info = __rest(_a, ["source"]);
@@ -30,14 +38,13 @@ const usersUpdate = (updateUsers) => {
                 if (httpRequest.headers['Referer']) {
                     source.referrer = httpRequest.headers['Referer'];
                 }
-                const toEdit = Object.assign(Object.assign({}, info), { source, id: httpRequest.params.id });
-                const patched = yield updateUsers(toEdit);
+                const posted = yield addBooks(Object.assign(Object.assign({}, info), { source }));
                 return {
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    statusCode: 200,
-                    body: { patched }
+                    statusCode: 201,
+                    body: { posted }
                 };
             }
             catch (e) {
@@ -56,4 +63,4 @@ const usersUpdate = (updateUsers) => {
         });
     };
 };
-exports.default = usersUpdate;
+exports.default = bookAdd;

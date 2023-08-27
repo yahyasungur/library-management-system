@@ -1,18 +1,22 @@
 "use strict";
+/**
+ * Make book entity
+ * @param encrypt
+ * @returns {Function} make
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
 Object.defineProperty(exports, "__esModule", { value: true });
-const patchUser = (encrypt) => {
+const makeBook = (encrypt) => {
     return function make(info) {
-        const { id, name } = info; // deconstruct
-        if (!id) {
-            throw new Error('Please enter ID of employee.');
-        }
+        const { name } = info; // deconstruct
         if (!name) {
             throw new Error('Please enter name.');
         }
         return Object.freeze({
-            getId: () => id,
             getFn: () => encrypt(name)
         });
     };
 };
-exports.default = patchUser;
+exports.default = makeBook;

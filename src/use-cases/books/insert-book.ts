@@ -1,3 +1,13 @@
+/**
+ * Add Book use case
+ * @param {Function} makeBooks - makeBooks function
+ * @param {Object} libraryDb - libraryDb object
+ * @returns {Function} addBook
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
+
 const addBook = (makeBooks: Function, libraryDb: any) => {
     return async function post(info: Object) {
         let data = await makeBooks(info); // entity

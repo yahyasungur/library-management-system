@@ -1,3 +1,13 @@
+/**
+ * Connection method
+ * @param dotenv - dotenv module
+ * @param pg - pg module
+ * @returns {Function} Connection method
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
+
 const connect = (dotenv: any, pg: any) => {
     return async function conn() {
         dotenv.config();

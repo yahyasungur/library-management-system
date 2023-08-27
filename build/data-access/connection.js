@@ -1,4 +1,13 @@
 "use strict";
+/**
+ * Connection method
+ * @param dotenv - dotenv module
+ * @param pg - pg module
+ * @returns {Function} Connection method
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {

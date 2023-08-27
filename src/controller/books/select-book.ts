@@ -1,3 +1,12 @@
+/**
+ * Book Select Controller
+ * @param {Function} selectBooks - Select Book Use Case
+ * @returns {Object} Book Select Controller
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
+
 const bookSelect = (selectBooks: Function) => {
     return async function get(httpRequest: any) {
         const headers = {

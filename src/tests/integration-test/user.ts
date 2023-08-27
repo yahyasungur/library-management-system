@@ -1,3 +1,8 @@
+/**
+ * User route integration test
+ * Reference: https://github.com/rodentskie
+ */
+
 import axios from 'axios';
 import dotenv from 'dotenv';
 dotenv.config();

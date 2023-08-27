@@ -1,3 +1,12 @@
+/**
+ * Record Return Book Controller
+ * @param {Function} addRecords - Add Record Use Case
+ * @returns {Object} Record Return Book Controller
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
+
 const bookReturn = (addRecords: Function) => {
     return async function post(httpRequest: any) {
         try {

@@ -1,4 +1,12 @@
 "use strict";
+/**
+ * App.ts
+ *
+ * This is the main file for the server. It will handle all the routes and middlewares.
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+*/
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -27,7 +35,7 @@ const server = app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}.`);
 });
 // routes
-app.use('', require('./routes/users/app'));
+app.use('', require('./routes/app'));
 // when invalid routes are entered
 app.use((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.status(404).send(`Route is no where to be found.`);

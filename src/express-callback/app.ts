@@ -1,3 +1,12 @@
+/**
+ * Callback function for express
+ * @param {Function} controller - Controller function
+ * @returns {Function} Callback function
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
+
 const makeExpressCallback = (controller: Function) => {
     return (req: any, res: any) => {
         const httpRequest = {

@@ -1,6 +1,15 @@
+/**
+ * Make record entity
+ * @param encrypt
+ * @returns {Function} make
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
+
 const makeRecord = (encrypt: Function) => {
     return function make(info: any) {
-        const {bookId, bookName, userId, operation, score} = info; // deconstruct
+        const { bookId, bookName, userId, operation, score } = info; // deconstruct
         if (!bookId) {
             throw new Error('Please enter bookId.');
         }
@@ -15,7 +24,7 @@ const makeRecord = (encrypt: Function) => {
             getUn: () => userId,
             getOp: () => operation,
             getSc: () => score,
-            getBk: () => bookId,
+            getBk: () => bookId
         });
     };
 };

@@ -12,10 +12,7 @@ module.exports = {
     up: (queryInterface, Sequelize) => __awaiter(void 0, void 0, void 0, function* () {
         return queryInterface.bulkInsert('Users', [
             {
-                firstName: 'John',
-                lastName: 'Doe',
-                email: 'example@example.com',
-                age: 26,
+                name: 'John',
                 createdAt: new Date(),
                 updatedAt: new Date()
             }

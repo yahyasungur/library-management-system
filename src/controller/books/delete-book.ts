@@ -1,3 +1,12 @@
+/**
+ * Book Delete Controller
+ * @param {Function} deleteBooks - Delete Book Use Case
+ * @returns {Object} Book Delete Controller
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
+
 const bookDelete = (deleteBooks: Function) => {
     return async function get(httpRequest: any) {
         const headers = {

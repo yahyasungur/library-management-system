@@ -1,4 +1,12 @@
 "use strict";
+/**
+ * Callback function for express
+ * @param {Function} controller - Controller function
+ * @returns {Function} Callback function
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
 Object.defineProperty(exports, "__esModule", { value: true });
 const makeExpressCallback = (controller) => {
     return (req, res) => {

@@ -1,3 +1,12 @@
+/**
+ * Select record controller
+ * @param {Function} selectRecords - Select records use case
+ * @returns {Object} Record select controller
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
+
 const recordSelect = (selectRecords: Function) => {
     return async function get(httpRequest: any) {
         const headers = {

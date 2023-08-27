@@ -1,3 +1,12 @@
+/**
+ * User Select Controller
+ * @param {Function} selectUsers - Select User Use Case
+ * @returns {Object} User Select Controller
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
+
 const userSelect = (selectUsers: Function) => {
     return async function get(httpRequest: any) {
         const headers = {

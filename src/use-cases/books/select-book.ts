@@ -1,3 +1,13 @@
+/**
+ * Select book use case
+ * @param {Object} libraryDb - libraryDb object
+ * @param {Function} decrypt - decrypt function
+ * @returns {Function} selectBook
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
+
 const selectBook = (libraryDb: any, decrypt: Function) => {
     return async function select(info: any) {
         let data = [];

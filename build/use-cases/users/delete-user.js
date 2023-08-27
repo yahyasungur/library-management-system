@@ -1,4 +1,12 @@
 "use strict";
+/**
+ * Delete user use case
+ * @param {object} libraryDb
+ * @returns {function} deleteUser
+ *
+ * Author: Yahya Sungur
+ * Date: 27.08.2023
+ */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -9,12 +17,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const deleteUser = (userDb) => {
+const deleteUser = (libraryDb) => {
     return function select(info) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = info;
             // delete query
-            const res = yield userDb.removeUser(id);
+            const res = yield libraryDb.removeUser(id);
             let msg = `User was not deleted, please try again.`;
             if (res == 1) {
                 msg = `User deleted successfully.`;

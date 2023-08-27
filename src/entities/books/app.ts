@@ -1,16 +1,18 @@
+/**
+ * Books entity
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
+
 import _ from '../../functions/app'; // functions
 
-// ####
 import makeBook from './make-book';
-import patchBook from './patch-book';
-// ####
+
 const makeBooks = makeBook(_.enc);
-const patchBooks = patchBook(_.enc);
-// ####
 
 const entity = {
-    makeBooks,
-    patchBooks
+    makeBooks
 };
 
 export default entity;

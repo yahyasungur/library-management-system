@@ -1,3 +1,13 @@
+/**
+ * Queries to database
+ * @param {Object} conn - connection to database
+ * @param {Object} models - sequelize models
+ * @returns {Object} Query result
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
+
 const query = (conn: any, models: any) => {
     return Object.freeze({
         insertUser,
@@ -326,8 +336,7 @@ const query = (conn: any, models: any) => {
             });
 
             return res;
-        }
-        catch (e: any) {
+        } catch (e: any) {
             console.log('Error: ', e);
         }
     }
@@ -348,8 +357,7 @@ const query = (conn: any, models: any) => {
             });
 
             return res;
-        }
-        catch (e: any) {
+        } catch (e: any) {
             console.log('Error: ', e);
         }
     }
@@ -370,8 +378,7 @@ const query = (conn: any, models: any) => {
             });
 
             return res;
-        }
-        catch (e: any) {
+        } catch (e: any) {
             console.log('Error: ', e);
         }
     }

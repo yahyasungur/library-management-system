@@ -1,3 +1,13 @@
+/**
+ * Add Record use case
+ * @param {Function} makeRecords - makeRecords function
+ * @param {Object} libraryDb - libraryDb object
+ * @returns {Function} addRecord
+ *
+ * Author: Yahya Sungur
+ * Date: 27.08.2023
+ */
+
 import _ from '../../functions/app';
 
 const addRecord = (makeRecords: Function, libraryDb: any) => {
@@ -16,7 +26,6 @@ const addRecord = (makeRecords: Function, libraryDb: any) => {
             throw new Error(`Book doesn't exist.`);
         }
 
-
         // check if the operation is borrow and the book is already borrowed
         if (data.getOp() === 'borrow') {
             const isBorrowed = await libraryDb.checkBookIsAlreadyBorrowed(data.getBk());
@@ -25,7 +34,7 @@ const addRecord = (makeRecords: Function, libraryDb: any) => {
             }
         } else if (data.getOp() === 'return') {
             // check if there is a borrow record
-            const isBorrowed = await libraryDb.isThereAnyBookBorrowed(data.getUn() ,data.getBk());
+            const isBorrowed = await libraryDb.isThereAnyBookBorrowed(data.getUn(), data.getBk());
             if (isBorrowed.rowCount === 0) {
                 throw new Error(`Error on returning book, book didn't borrowed.`);
             }
@@ -34,7 +43,6 @@ const addRecord = (makeRecords: Function, libraryDb: any) => {
         }
 
         const bookName = await libraryDb.getBookName(data.getBk());
-        
 
         data = {
             userId: data.getUn(),

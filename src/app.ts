@@ -1,3 +1,12 @@
+/**
+ * App.ts
+ * 
+ * This is the main file for the server. It will handle all the routes and middlewares.
+ * 
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+*/
+
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';

@@ -1,3 +1,13 @@
+/**
+ * Add User use case
+ * @param {Function} makeUsers - makeUsers function
+ * @param {Object} libraryDb - libraryDb object
+ * @returns {Function} addUser
+ *
+ * Author: Yahya Sungur
+ * Date: 27.08.2023
+ */
+
 const addUser = (makeUsers: Function, libraryDb: any) => {
     return async function post(info: Object) {
         let data = await makeUsers(info); // entity

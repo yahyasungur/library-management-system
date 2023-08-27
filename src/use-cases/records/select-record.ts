@@ -1,7 +1,17 @@
+/**
+ * Select record use case
+ * @param {Object} libraryDb - libraryDb object
+ * @param {Function} decrypt - decrypt function
+ * @returns {Function} selectRecord
+ *
+ * Author: Yahya Sungur
+ * Date: 27.08.2023
+ */
+
 const selectRecord = (libraryDb: any, decrypt: Function) => {
     return async function select(info: any) {
         let data = [];
-            // select all
+        // select all
         const res = await libraryDb.selectAllBooks();
         if (res.rowCount > 0) {
             // only when there is data returned
@@ -21,7 +31,7 @@ const selectRecord = (libraryDb: any, decrypt: Function) => {
                 });
             }
         }
-        
+
         return data;
     };
 };

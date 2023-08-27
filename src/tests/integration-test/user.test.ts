@@ -1,3 +1,8 @@
+/**
+ * User Test Suites - Integration Test
+ * Reference: https://github.com/rodentskie
+ */
+
 import randomstring from 'randomstring';
 
 import route from './user';
@@ -14,7 +19,7 @@ describe(`Employees Tests Suites`, () => {
             name: randomstring.generate({
                 length: 12,
                 charset: 'alphabetic'
-            }), // generate random string
+            }) // generate random string
         };
         const res = await route.addUser(info);
         const data = res.status;
@@ -26,7 +31,7 @@ describe(`Employees Tests Suites`, () => {
             name: randomstring.generate({
                 length: 12,
                 charset: 'alphabetic'
-            }), // generate random string
+            }) // generate random string
         };
         const res = await route.addUser(info);
         const data = res.response.status;
@@ -41,7 +46,7 @@ describe(`Employees Tests Suites`, () => {
             name: randomstring.generate({
                 length: 12,
                 charset: 'alphabetic'
-            }), // generate random string
+            }) // generate random string
         };
 
         const res = await route.updateUser(id, info);
@@ -54,7 +59,7 @@ describe(`Employees Tests Suites`, () => {
         const employees = emp.data.view;
         const id = employees[employees.length - 1].id;
         const info = {
-            name: null,
+            name: null
         };
 
         const res = await route.updateUser(id, info);

@@ -1,4 +1,15 @@
 "use strict";
+/**
+ * Decrypts a string
+ * @param {any} crypto - Crypto module
+ * @param {any} algorithm - Algorithm
+ * @param {any} password - Password
+ * @param {any} iv - IV
+ * @returns {Function} Decrypt function
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
 Object.defineProperty(exports, "__esModule", { value: true });
 const decrypt = (crypto, algorithm, password, iv) => {
     return function decrypt(encrypted) {

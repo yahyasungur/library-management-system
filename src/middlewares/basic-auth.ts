@@ -1,3 +1,13 @@
+/**
+ * A basic auth middleware
+ * @param {Object} auth - auth object
+ * @param {Object} dotenv - dotenv object
+ * @returns {Function} auths
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
+
 const myAuth = (auth: any, dotenv: any) => {
     return async function auths(req: any, res: any, next: any) {
         dotenv.config();

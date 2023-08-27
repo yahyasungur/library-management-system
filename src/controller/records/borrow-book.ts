@@ -1,3 +1,12 @@
+/**
+ * Records borrow book controller
+ * @param {Function} addRecords - Add records use case
+ * @returns {Object} Book borrow controller
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
+
 const bookBorrow = (addRecords: Function) => {
     return async function post(httpRequest: any) {
         try {

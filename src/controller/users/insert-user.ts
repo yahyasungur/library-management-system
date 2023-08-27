@@ -1,3 +1,12 @@
+/**
+ * User add controller
+ * @param {Function} addUsers - Add users use case
+ * @returns {Object} User add controller
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
+
 const userAdd = (addUsers: Function) => {
     return async function post(httpRequest: any) {
         try {

@@ -1,3 +1,14 @@
+/**
+ * User use case
+ * @param {object} entity
+ * @param {object} libraryDb
+ * @param {object} _
+ * @returns {object} userUC
+ *
+ * Author: Yahya Sungur
+ * Date: 27.08.2023
+ */
+
 import entity from '../../entities/users/app';
 import libraryDb from '../../data-access/repository/app';
 import _ from '../../functions/app';

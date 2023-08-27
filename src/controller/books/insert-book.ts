@@ -1,3 +1,12 @@
+/**
+ * Book Add Controller
+ * @param {Function} addBooks - Add Book Use Case
+ * @returns {Object} Book Add Controller
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
+
 const bookAdd = (addBooks: Function) => {
     return async function post(httpRequest: any) {
         try {

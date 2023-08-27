@@ -1,3 +1,12 @@
+/**
+ * User Delete Controller
+ * @param {Function} deleteUsers - Delete User Use Case
+ * @returns {Object} User Delete Controller
+ *
+ * Author: Yahya Sungur
+ * Date: 26.08.2023
+ */
+
 const userDelete = (deleteUsers: Function) => {
     return async function get(httpRequest: any) {
         const headers = {

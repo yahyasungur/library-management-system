@@ -1,3 +1,8 @@
+/**
+ * Unit test for users
+ * Reference: https://github.com/rodentskie
+ */
+
 import randomstring from 'randomstring';
 
 // change to test DB
@@ -20,7 +25,7 @@ describe(`Users Tests Suites`, () => {
             name: randomstring.generate({
                 length: 12,
                 charset: 'alphabetic'
-            }), // generate random string
+            }) // generate random string
         };
         const res = await userUC.addUsers(info);
         expect(res).toBe(`User has been added successfully.`);
@@ -32,7 +37,7 @@ describe(`Users Tests Suites`, () => {
                 name: randomstring.generate({
                     length: 12,
                     charset: 'alphabetic'
-                }), // generate random string
+                }) // generate random string
             };
             await userUC.addUsers(info);
         } catch (e: any) {

@@ -1,4 +1,8 @@
 "use strict";
+/**
+ * User Test Suites - Integration Test
+ * Reference: https://github.com/rodentskie
+ */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -22,19 +26,10 @@ describe(`Employees Tests Suites`, () => {
     }));
     test(`Add Employees - All fields have value.`, () => __awaiter(void 0, void 0, void 0, function* () {
         const info = {
-            firstName: randomstring_1.default.generate({
+            name: randomstring_1.default.generate({
                 length: 12,
                 charset: 'alphabetic'
-            }),
-            lastName: randomstring_1.default.generate({
-                length: 12,
-                charset: 'alphabetic'
-            }),
-            email: `${randomstring_1.default.generate({
-                length: 5,
-                charset: 'alphabetic'
-            })}@gmail.com`,
-            age: 13
+            }) // generate random string
         };
         const res = yield user_1.default.addUser(info);
         const data = res.status;
@@ -42,16 +37,10 @@ describe(`Employees Tests Suites`, () => {
     }));
     test(`Add Employees - Required fields missing.`, () => __awaiter(void 0, void 0, void 0, function* () {
         const info = {
-            firstName: randomstring_1.default.generate({
+            name: randomstring_1.default.generate({
                 length: 12,
                 charset: 'alphabetic'
-            }),
-            lastName: null,
-            email: `${randomstring_1.default.generate({
-                length: 5,
-                charset: 'alphabetic'
-            })}@gmail.com`,
-            age: 8
+            }) // generate random string
         };
         const res = yield user_1.default.addUser(info);
         const data = res.response.status;
@@ -62,19 +51,10 @@ describe(`Employees Tests Suites`, () => {
         const employees = emp.data.view;
         const id = employees[employees.length - 1].id;
         const info = {
-            firstName: randomstring_1.default.generate({
+            name: randomstring_1.default.generate({
                 length: 12,
                 charset: 'alphabetic'
-            }),
-            lastName: randomstring_1.default.generate({
-                length: 12,
-                charset: 'alphabetic'
-            }),
-            email: `${randomstring_1.default.generate({
-                length: 5,
-                charset: 'alphabetic'
-            })}@gmail.com`,
-            age: 9
+            }) // generate random string
         };
         const res = yield user_1.default.updateUser(id, info);
         const data = res.status;
@@ -85,16 +65,7 @@ describe(`Employees Tests Suites`, () => {
         const employees = emp.data.view;
         const id = employees[employees.length - 1].id;
         const info = {
-            firstName: null,
-            lastName: randomstring_1.default.generate({
-                length: 12,
-                charset: 'alphabetic'
-            }),
-            email: `${randomstring_1.default.generate({
-                length: 5,
-                charset: 'alphabetic'
-            })}@gmail.com`,
-            age: 9
+            name: null
         };
         const res = yield user_1.default.updateUser(id, info);
         const data = res.response.status;

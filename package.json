@@ -22,7 +22,8 @@
     "randomstring": "^1.2.1",
     "reflect-metadata": "^0.1.13",
     "sequelize": "^6.6.2",
-    "sequelize-cli": "^6.2.0"
+    "sequelize-cli": "^6.2.0",
+    "joi": "17.9.2"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",

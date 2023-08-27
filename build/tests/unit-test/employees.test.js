@@ -1,4 +1,8 @@
 "use strict";
+/**
+ * Unit test for users
+ * Reference: https://github.com/rodentskie
+ */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -27,19 +31,10 @@ describe(`Users Tests Suites`, () => {
     }));
     test(`Add Users - All fields have value.`, () => __awaiter(void 0, void 0, void 0, function* () {
         const info = {
-            firstName: randomstring_1.default.generate({
+            name: randomstring_1.default.generate({
                 length: 12,
                 charset: 'alphabetic'
-            }),
-            lastName: randomstring_1.default.generate({
-                length: 12,
-                charset: 'alphabetic'
-            }),
-            email: `${randomstring_1.default.generate({
-                length: 5,
-                charset: 'alphabetic'
-            })}@gmail.com`,
-            age: 8
+            }) // generate random string
         };
         const res = yield app_1.default.addUsers(info);
         expect(res).toBe(`User has been added successfully.`);
@@ -47,16 +42,10 @@ describe(`Users Tests Suites`, () => {
     test(`Add Users - Required fields missing.`, () => __awaiter(void 0, void 0, void 0, function* () {
         try {
             const info = {
-                firstName: randomstring_1.default.generate({
+                name: randomstring_1.default.generate({
                     length: 12,
                     charset: 'alphabetic'
-                }),
-                lastName: null,
-                email: `${randomstring_1.default.generate({
-                    length: 5,
-                    charset: 'alphabetic'
-                })}@gmail.com`,
-                age: 8
+                }) // generate random string
             };
             yield app_1.default.addUsers(info);
         }

@@ -1,10 +1,20 @@
 "use strict";
+/**
+ * User use case
+ * @param {object} entity
+ * @param {object} libraryDb
+ * @param {object} _
+ * @returns {object} userUC
+ *
+ * Author: Yahya Sungur
+ * Date: 27.08.2023
+ */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const app_1 = __importDefault(require("../../entities/users/app"));
-const app_2 = __importDefault(require("../../data-access/users/app"));
+const app_2 = __importDefault(require("../../data-access/repository/app"));
 const app_3 = __importDefault(require("../../functions/app"));
 // ####
 const insert_user_1 = __importDefault(require("./insert-user"));
