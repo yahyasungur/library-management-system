@@ -27,7 +27,7 @@ const server = app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}.`);
 });
 // routes
-app.use('/users', require('./routes/users/app'));
+app.use('', require('./routes/users/app'));
 // when invalid routes are entered
 app.use((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.status(404).send(`Route is no where to be found.`);

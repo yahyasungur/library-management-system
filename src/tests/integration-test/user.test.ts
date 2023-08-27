@@ -1,6 +1,6 @@
 import randomstring from 'randomstring';
 
-import route from './employees';
+import route from './user';
 
 describe(`Employees Tests Suites`, () => {
     test(`Select Employees`, async () => {

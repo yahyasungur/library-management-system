@@ -13,10 +13,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const randomstring_1 = __importDefault(require("randomstring"));
-const employees_1 = __importDefault(require("./employees"));
+const user_1 = __importDefault(require("./user"));
 describe(`Employees Tests Suites`, () => {
     test(`Select Employees`, () => __awaiter(void 0, void 0, void 0, function* () {
-        const res = yield employees_1.default.selectUser();
+        const res = yield user_1.default.selectUser();
         const data = res.status;
         expect(data).toBe(200);
     }));
@@ -36,7 +36,7 @@ describe(`Employees Tests Suites`, () => {
             })}@gmail.com`,
             age: 13
         };
-        const res = yield employees_1.default.addUser(info);
+        const res = yield user_1.default.addUser(info);
         const data = res.status;
         expect(data).toBe(201);
     }));
@@ -53,12 +53,12 @@ describe(`Employees Tests Suites`, () => {
             })}@gmail.com`,
             age: 8
         };
-        const res = yield employees_1.default.addUser(info);
+        const res = yield user_1.default.addUser(info);
         const data = res.response.status;
         expect(data).toBe(400);
     }));
     test(`Update Employees - All fields have value.`, () => __awaiter(void 0, void 0, void 0, function* () {
-        const emp = yield employees_1.default.selectUser();
+        const emp = yield user_1.default.selectUser();
         const employees = emp.data.view;
         const id = employees[employees.length - 1].id;
         const info = {
@@ -76,12 +76,12 @@ describe(`Employees Tests Suites`, () => {
             })}@gmail.com`,
             age: 9
         };
-        const res = yield employees_1.default.updateUser(id, info);
+        const res = yield user_1.default.updateUser(id, info);
         const data = res.status;
         expect(data).toBe(200);
     }));
     test(`Update Employees - Required fields are missing.`, () => __awaiter(void 0, void 0, void 0, function* () {
-        const emp = yield employees_1.default.selectUser();
+        const emp = yield user_1.default.selectUser();
         const employees = emp.data.view;
         const id = employees[employees.length - 1].id;
         const info = {
@@ -96,15 +96,15 @@ describe(`Employees Tests Suites`, () => {
             })}@gmail.com`,
             age: 9
         };
-        const res = yield employees_1.default.updateUser(id, info);
+        const res = yield user_1.default.updateUser(id, info);
         const data = res.response.status;
         expect(data).toBe(400);
     }));
     test(`Delete Employees`, () => __awaiter(void 0, void 0, void 0, function* () {
-        const emp = yield employees_1.default.selectUser();
+        const emp = yield user_1.default.selectUser();
         const employees = emp.data.view;
         const id = employees[employees.length - 1].id;
-        const res = yield employees_1.default.removeUser(id);
+        const res = yield user_1.default.removeUser(id);
         const data = res.status;
         expect(data).toBe(200);
     }));

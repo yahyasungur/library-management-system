@@ -19,7 +19,7 @@ const server = app.listen(PORT, () => {
 });
 
 // routes
-app.use('/users', require('./routes/users/app'));
+app.use('', require('./routes/users/app'));
 
 // when invalid routes are entered
 app.use(async (req, res) => {
