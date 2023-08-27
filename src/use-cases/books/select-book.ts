@@ -12,12 +12,13 @@ const selectBook = (libraryDb: any, decrypt: Function) => {
                 for (let i = 0; i < items.length; i++) {
                     const e = items[i];
 
+                    const res2 = await libraryDb.calculateAvarageScoreOfBook(id);
+
                     // push items to array
                     data.push({
                         id: e.id,
                         name: e.name ? decrypt(e.name) : null,
-                        createdAt: e.createdAt,
-                        updatedAt: e.updatedAt
+                        score: res2.rows[0].avg ? parseFloat(res2.rows[0].avg).toFixed(2) : -1
                     });
                 }
             }

@@ -12,12 +12,17 @@ const selectUser = (libraryDb: any, decrypt: Function) => {
                 for (let i = 0; i < items.length; i++) {
                     const e = items[i];
 
+                    const past = await libraryDb.getUserReturnedBookNameAndScore(id);
+                    const present = await libraryDb.getUserBorrowedAndNotReturnedBookName(id);
+
                     // push items to array
                     data.push({
                         id: e.id,
                         name: e.name ? decrypt(e.name) : null,
-                        createdAt: e.createdAt,
-                        updatedAt: e.updatedAt
+                        books: {
+                            past: past ? past.rows : [],
+                            present: present ? present.rows : []
+                        }
                     });
                 }
             }
