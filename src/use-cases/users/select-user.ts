@@ -25,6 +25,8 @@ const selectUser = (libraryDb: any, decrypt: Function) => {
                         }
                     });
                 }
+            } else {
+                throw new Error(`User doesn't exist.`);
             }
         } else {
             // select all

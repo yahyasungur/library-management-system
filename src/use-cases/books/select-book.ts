@@ -21,6 +21,8 @@ const selectBook = (libraryDb: any, decrypt: Function) => {
                         score: res2.rows[0].avg ? parseFloat(res2.rows[0].avg).toFixed(2) : -1
                     });
                 }
+            } else {
+                throw new Error(`Book doesn't exist.`);
             }
         } else {
             // select all

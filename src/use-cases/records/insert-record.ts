@@ -4,6 +4,19 @@ const addRecord = (makeRecords: Function, libraryDb: any) => {
     return async function post(info: Object) {
         let data = await makeRecords(info); // entity
 
+        // check if the user is already exist
+        const isUserExist = await libraryDb.selectOne(data.getUn());
+        if (isUserExist.rowCount === 0) {
+            throw new Error(`User doesn't exist.`);
+        }
+
+        // check if the book is already exist
+        const isBookExist = await libraryDb.selectOneBook(data.getBk());
+        if (isBookExist.rowCount === 0) {
+            throw new Error(`Book doesn't exist.`);
+        }
+
+
         // check if the operation is borrow and the book is already borrowed
         if (data.getOp() === 'borrow') {
             const isBorrowed = await libraryDb.checkBookIsAlreadyBorrowed(data.getBk());
