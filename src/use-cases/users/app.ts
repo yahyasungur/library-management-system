@@ -1,14 +1,14 @@
 import entity from '../../entities/users/app';
-import userDb from '../../data-access/users/app';
+import libraryDb from '../../data-access/repository/app';
 import _ from '../../functions/app';
 // ####
 import addUser from './insert-user';
 import selectUser from './select-user';
 import deleteUser from './delete-user';
 // ####
-const addUsers = addUser(entity.makeUsers, userDb);
-const selectUsers = selectUser(userDb, _.dec);
-const deleteUsers = deleteUser(userDb);
+const addUsers = addUser(entity.makeUsers, libraryDb);
+const selectUsers = selectUser(libraryDb, _.dec);
+const deleteUsers = deleteUser(libraryDb);
 // ####
 
 // user use case

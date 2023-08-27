@@ -1,4 +1,4 @@
-const addUser = (makeUsers: Function, userDb: any) => {
+const addUser = (makeUsers: Function, libraryDb: any) => {
     return async function post(info: Object) {
         let data = await makeUsers(info); // entity
 
@@ -7,11 +7,11 @@ const addUser = (makeUsers: Function, userDb: any) => {
         };
 
         // to do checking if name already exist
-        const check = await userDb.checkNameExist(data);
+        const check = await libraryDb.checkNameExist(data);
         if (check.rowCount > 0) throw new Error(`User already exist, please check.`);
 
         //   insert
-        const res = await userDb.insertUser(data);
+        const res = await libraryDb.insertUser(data);
         // ##
         let msg = `Error on inserting user, please try again.`;
 

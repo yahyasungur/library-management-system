@@ -1,11 +1,11 @@
-const selectUser = (libraryDb: any, decrypt: Function) => {
+const selectBook = (libraryDb: any, decrypt: Function) => {
     return async function select(info: any) {
         let data = [];
         const { id } = info; // deconstruct
 
         if (id) {
             // select one
-            const res = await libraryDb.selectOne(id);
+            const res = await libraryDb.selectOneBook(id);
             if (res.rowCount > 0) {
                 // only when there is data returned
                 const items = res.rows;
@@ -23,7 +23,7 @@ const selectUser = (libraryDb: any, decrypt: Function) => {
             }
         } else {
             // select all
-            const res = await libraryDb.selectAll();
+            const res = await libraryDb.selectAllBooks();
             if (res.rowCount > 0) {
                 // only when there is data returned
                 const items = res.rows;
@@ -42,4 +42,4 @@ const selectUser = (libraryDb: any, decrypt: Function) => {
     };
 };
 
-export default selectUser;
+export default selectBook;

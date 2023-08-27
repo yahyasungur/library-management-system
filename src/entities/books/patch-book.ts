@@ -1,8 +1,8 @@
-const patchUser = (encrypt: Function) => {
+const patchBook = (encrypt: Function) => {
     return function make(info: any) {
         const { id, name } = info; // deconstruct
         if (!id) {
-            throw new Error('Please enter ID of user.');
+            throw new Error('Please enter ID of book.');
         }
         if (!name) {
             throw new Error('Please enter name.');
@@ -14,4 +14,4 @@ const patchUser = (encrypt: Function) => {
     };
 };
 
-export default patchUser;
+export default patchBook;
