@@ -11,19 +11,10 @@ describe(`Employees Tests Suites`, () => {
 
     test(`Add Employees - All fields have value.`, async () => {
         const info = {
-            firstName: randomstring.generate({
+            name: randomstring.generate({
                 length: 12,
                 charset: 'alphabetic'
             }), // generate random string
-            lastName: randomstring.generate({
-                length: 12,
-                charset: 'alphabetic'
-            }), // generate random string
-            email: `${randomstring.generate({
-                length: 5,
-                charset: 'alphabetic'
-            })}@gmail.com`, // generate random string
-            age: 13
         };
         const res = await route.addUser(info);
         const data = res.status;
@@ -32,16 +23,10 @@ describe(`Employees Tests Suites`, () => {
 
     test(`Add Employees - Required fields missing.`, async () => {
         const info = {
-            firstName: randomstring.generate({
+            name: randomstring.generate({
                 length: 12,
                 charset: 'alphabetic'
             }), // generate random string
-            lastName: null,
-            email: `${randomstring.generate({
-                length: 5,
-                charset: 'alphabetic'
-            })}@gmail.com`, // generate random string
-            age: 8
         };
         const res = await route.addUser(info);
         const data = res.response.status;
@@ -53,19 +38,10 @@ describe(`Employees Tests Suites`, () => {
         const employees = emp.data.view;
         const id = employees[employees.length - 1].id;
         const info = {
-            firstName: randomstring.generate({
+            name: randomstring.generate({
                 length: 12,
                 charset: 'alphabetic'
             }), // generate random string
-            lastName: randomstring.generate({
-                length: 12,
-                charset: 'alphabetic'
-            }), // generate random string
-            email: `${randomstring.generate({
-                length: 5,
-                charset: 'alphabetic'
-            })}@gmail.com`, // generate random string
-            age: 9
         };
 
         const res = await route.updateUser(id, info);
@@ -78,16 +54,7 @@ describe(`Employees Tests Suites`, () => {
         const employees = emp.data.view;
         const id = employees[employees.length - 1].id;
         const info = {
-            firstName: null,
-            lastName: randomstring.generate({
-                length: 12,
-                charset: 'alphabetic'
-            }), // generate random string
-            email: `${randomstring.generate({
-                length: 5,
-                charset: 'alphabetic'
-            })}@gmail.com`, // generate random string
-            age: 9
+            name: null,
         };
 
         const res = await route.updateUser(id, info);

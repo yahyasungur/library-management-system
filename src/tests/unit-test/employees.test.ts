@@ -17,19 +17,10 @@ describe(`Users Tests Suites`, () => {
 
     test(`Add Users - All fields have value.`, async () => {
         const info = {
-            firstName: randomstring.generate({
+            name: randomstring.generate({
                 length: 12,
                 charset: 'alphabetic'
             }), // generate random string
-            lastName: randomstring.generate({
-                length: 12,
-                charset: 'alphabetic'
-            }), // generate random string
-            email: `${randomstring.generate({
-                length: 5,
-                charset: 'alphabetic'
-            })}@gmail.com`, // generate random string
-            age: 8
         };
         const res = await userUC.addUsers(info);
         expect(res).toBe(`User has been added successfully.`);
@@ -38,16 +29,10 @@ describe(`Users Tests Suites`, () => {
     test(`Add Users - Required fields missing.`, async () => {
         try {
             const info = {
-                firstName: randomstring.generate({
+                name: randomstring.generate({
                     length: 12,
                     charset: 'alphabetic'
                 }), // generate random string
-                lastName: null,
-                email: `${randomstring.generate({
-                    length: 5,
-                    charset: 'alphabetic'
-                })}@gmail.com`, // generate random string
-                age: 8
             };
             await userUC.addUsers(info);
         } catch (e: any) {

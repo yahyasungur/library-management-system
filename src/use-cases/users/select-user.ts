@@ -33,9 +33,7 @@ const selectUser = (userDb: any, decrypt: Function) => {
                     // push items to array
                     data.push({
                         id: e.id,
-                        name: e.name ? decrypt(e.name) : null,
-                        createdAt: e.createdAt,
-                        updatedAt: e.updatedAt
+                        name: e.name ? decrypt(e.name) : null
                     });
                 }
             }

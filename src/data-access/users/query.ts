@@ -70,7 +70,7 @@ const query = (conn: any, models: any) => {
             const { name } = data; // deconstruct
 
             const res = await new Promise((resolve) => {
-                const sql = `SELECT id FROM "Users" WHERE "firstName" = $1;`;
+                const sql = `SELECT id FROM "Users" WHERE "name" = $1;`;
                 const params = [name];
                 pool.query(sql, params, (err: Error, res: Response) => {
                     pool.end(); // end connection
